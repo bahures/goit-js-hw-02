@@ -5,22 +5,15 @@ let total = 0;
 
 do {
   input = prompt("введите число");
-
-  numbers.push(input);
-
   if (input === null) {
     break;
   }
+  input = Number(input);
+  numbers.push(input);
+
+  for (const number of numbers) {
+    total += number;
+  }
 } while (true);
 
-console.log(numbers);
-
-const add = function (...args) {
-  for (const arg of args) {
-    total += arg;
-  }
-
-  return total;
-};
-
-console.log(add(input));
+console.log(total);
