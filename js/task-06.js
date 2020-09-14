@@ -3,17 +3,15 @@ let input;
 const numbers = [];
 let total = 0;
 
-do {
-  input = prompt("введите число");
-  if (input === null) {
-    break;
-  }
-  input = Number(input);
-  numbers.push(input);
+while (true) {
+  let input = prompt("Введите число", 0);
 
-  for (const number of numbers) {
-    total += number;
-  }
-} while (true);
+  if (input === "" || input === null) break;
 
+  numbers.push(+input);
+}
+
+for (const number of numbers) {
+  total += number;
+}
 console.log(total);
